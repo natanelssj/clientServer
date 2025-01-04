@@ -3,25 +3,6 @@ import org.testng.internal.collections.Pair;
 import org.w3c.dom.Node;
 import java.util.*;
 public class Algorithms_sort {
-    public static void swap(int[] array, int i, int j) {
-        if (i < 0 || j < 0 || i >= array.length || j >= array.length) {
-            throw new IllegalArgumentException("Invalid indices for swap");
-        }
-        Integer temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-//  bfs ,dfs ,dijkstra
-
-    public static void bubbleSort(int[] arr) {
-        for(int i = 0; i < arr.length - 1; i++) {
-            for (int j = 0; j < arr.length - 1 - i; j++) { // Optimize: Ignore the last sorted elements
-                if (arr[j] > arr[j + 1]) {
-                    swap(arr, j, j + 1);
-                }
-            }
-        }
-    }
 
     public static void bfs(Map<Integer, List<Integer>> graph, int start) {
         Set<Integer> visited = new HashSet<>(); // Track visited nodes
@@ -67,7 +48,7 @@ public class Algorithms_sort {
         }
 
     }
-    public static void dijkstra(Map<Integer, List<int[]>> graph, int start) {
+    /*public static void dijkstra(Map<Integer, List<int[]>> graph, int start) {
         PriorityQueue<int[]> queue = new PriorityQueue<>(Comparator.comparingInt(a -> a[1]));
         Map<Integer, Integer> distances = new HashMap<>();
 
@@ -100,6 +81,6 @@ public class Algorithms_sort {
         for (Map.Entry<Integer, Integer> entry : distances.entrySet()) {
             System.out.println("Node " + entry.getKey() + " is at distance " + entry.getValue());
         }
-    }
+    }*/
 
 }
